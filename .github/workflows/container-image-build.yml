@@ -45,7 +45,7 @@ jobs:
         run: |
           cp -r "./hacked/frontend" "."
           sed -i "s/欢迎使用/欢迎来到/g" "./frontend/src/i18n/locales/zh/misc.ts"
-          sed -i "s/10, 20, //g" frontend/src/components/payment/AmountInput.vue frontend/src/views/user/PaymentView.vue
+          sed -i "s/10, 20, /20, /g" frontend/src/components/payment/AmountInput.vue frontend/src/views/user/PaymentView.vue
           grep -rl "Sub2API" "./frontend" | xargs sed -i "s/Sub2API/ByteTensor/g"
           grep -rl "SUB2API_API_KEY" "./frontend" | xargs sed -i "s/SUB2API_API_KEY/BYTETENSOR_KEY/g"
           grep -rl "sub2_" "./backend/internal/service" | xargs sed -i "s/sub2_/mo_/g"
